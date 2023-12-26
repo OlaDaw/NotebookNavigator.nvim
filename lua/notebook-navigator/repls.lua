@@ -8,6 +8,12 @@ repls.iron = function(start_line, end_line, repl_args)
   require("iron.core").send(nil, lines)
 end
 
+repls.molten = function(start_line,end_line, repl_args)
+  --local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, 0)
+
+  vim.fn.MoltenEvaluateRange(start_line-1, end_line)
+end
+
 -- toggleterm
 repls.toggleterm = function(start_line, end_line, repl_args)
   local id = 1
